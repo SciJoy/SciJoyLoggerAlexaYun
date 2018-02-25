@@ -8,8 +8,8 @@ var thingShadows = awsIot.thingShadow({
    keyPath: "/home/pi/certs/sjpriv.pem.key",
   certPath: "/home/pi/certs/sjcert.pem.crt",
     caPath: "/home/pi/certs/aws-iot-rootCA.crt",
-  clientId: "SciJoyPi3Thing",
-      host: "a3g1fmc9jba095.iot.us-east-1.amazonaws.com"
+  clientId: "",
+      host: ""
 });
 
 
