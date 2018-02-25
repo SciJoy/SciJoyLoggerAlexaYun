@@ -5,9 +5,9 @@ const Alexa = require("alexa-sdk");
 var AWS = require('aws-sdk');
 
 var config = {};
-config.IOT_BROKER_ENDPOINT      = "a3g1fmc9jba095.iot.us-east-1.amazonaws.com".toLowerCase();;
-config.IOT_BROKER_REGION        = "us-east-1";
-config.IOT_THING_NAME           = "SciJoyYun3Thing";
+config.IOT_BROKER_ENDPOINT      = ;
+config.IOT_BROKER_REGION        = ;
+config.IOT_THING_NAME           = ;
 
 AWS.config.region = config.IOT_BROKER_REGION;
 
