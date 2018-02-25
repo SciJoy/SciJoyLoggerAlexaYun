@@ -1,0 +1,26 @@
+{
+  "desired": {
+    "welcome": "aws-iot",
+    "Sensor": "0",
+    "SampleRate": 60000,
+    "SensorDuration": 300000,
+    "ThresholdMM": "1",
+    "Threshold": "543",
+    "Actuator": "2",
+    "Trigger": "356",
+    "TriggerMM": "1",
+    "ActuatorDuration": 120000
+  },
+  "reported": {
+    "welcome": "aws-iot",
+    "Sensor": "0",
+    "SensorDuration": 300000,
+    "SampleRate": 60000,
+    "ThresholdMM": "1",
+    "Threshold": "543",
+    "Actuator": "2",
+    "ActuatorDuration": 120000,
+    "Trigger": "356",
+    "TriggerMM": "1"
+  }
+}

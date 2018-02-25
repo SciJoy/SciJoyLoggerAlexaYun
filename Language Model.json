@@ -1,0 +1,820 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "actuatorSlot",
+        "values": [
+          {
+            "id": "motor",
+            "name": {
+              "value": "motor",
+              "synonyms": [
+                "engine"
+              ]
+            }
+          },
+          {
+            "id": "buzzer",
+            "name": {
+              "value": "buzzer",
+              "synonyms": [
+                "sound",
+                "speaker"
+              ]
+            }
+          },
+          {
+            "id": "LED",
+            "name": {
+              "value": "LED",
+              "synonyms": [
+                "light",
+                "bulb",
+                "diode"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "directionSlot",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "backward",
+              "synonyms": [
+                "reverse"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "forward",
+              "synonyms": [
+                "straight"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "left",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "right",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "justActuator",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "actuator",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "justSensor",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "sensor",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "nextActionSlot",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "actuator",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "sensor",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "sensorSlot",
+        "values": [
+          {
+            "id": "accelerometer",
+            "name": {
+              "value": "accelerometer",
+              "synonyms": [
+                "acceleration"
+              ]
+            }
+          },
+          {
+            "id": "force",
+            "name": {
+              "value": "force",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "temperature",
+            "name": {
+              "value": "temperature",
+              "synonyms": [
+                "temp",
+                "heat"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "unitSlot",
+        "values": [
+          {
+            "id": "G",
+            "name": {
+              "value": "G",
+              "synonyms": [
+                "g",
+                "gs",
+                "m/s2",
+                "meters per second squared",
+                "g force",
+                "g forces"
+              ]
+            }
+          },
+          {
+            "id": "Newtons",
+            "name": {
+              "value": "Newtons",
+              "synonyms": [
+                "n",
+                "meters per second squared",
+                "m/s2",
+                "kgf",
+                "kilogram force",
+                "kilograms of force",
+                "kilogram of force",
+                "kilogram-force",
+                "lbf",
+                "pound force",
+                "pound-force",
+                "pounds of force",
+                "pound"
+              ]
+            }
+          },
+          {
+            "id": "Fahrenheit",
+            "name": {
+              "value": "Fahrenheit",
+              "synonyms": [
+                "f",
+                "degrees fahrenheit"
+              ]
+            }
+          },
+          {
+            "id": "Celcius",
+            "name": {
+              "value": "Celcius",
+              "synonyms": [
+                "c",
+                "degrees celcius"
+              ]
+            }
+          },
+          {
+            "id": "Kelvin",
+            "name": {
+              "value": "Kelvin",
+              "synonyms": [
+                "k",
+                "degrees kelvin"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "YNSlot",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "yes",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "no",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "ActuatorIntent",
+        "samples": [
+          "Use {actuator}",
+          "Set power to {power}",
+          "Set trigger value to {trigger}",
+          "Set time to {duration}",
+          "What {newSensorYN}",
+          "set {power}"
+        ],
+        "slots": [
+          {
+            "name": "actuator",
+            "type": "actuatorSlot",
+            "samples": [
+              "{actuator}"
+            ]
+          },
+          {
+            "name": "trigger",
+            "type": "AMAZON.NUMBER",
+            "samples": [
+              "{trigger}"
+            ]
+          },
+          {
+            "name": "power",
+            "type": "AMAZON.NUMBER",
+            "samples": [
+              "{power}"
+            ]
+          },
+          {
+            "name": "duration",
+            "type": "AMAZON.DURATION",
+            "samples": [
+              "{duration}"
+            ]
+          },
+          {
+            "name": "newSensorYN",
+            "type": "YNSlot",
+            "samples": [
+              "{newSensorYN}"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "AvailableSensorIntent",
+        "samples": [
+          "What sensors are available",
+          "available sensors",
+          "sensors list"
+        ],
+        "slots": []
+      },
+      {
+        "name": "CurrentlyLoggingIntent",
+        "samples": [
+          "get a plot",
+          "show plot",
+          "plot"
+        ],
+        "slots": []
+      },
+      {
+        "name": "noSensorThresholdIntent",
+        "samples": [
+          "sensor",
+          "new sensor",
+          "log sensor",
+          "use sensor"
+        ],
+        "slots": []
+      },
+      {
+        "name": "noThresholdActuatorIntent",
+        "samples": [
+          "trigger {nextActionNoT}",
+          "actuator"
+        ],
+        "slots": [
+          {
+            "name": "nextActionNoT",
+            "type": "nextActionSlot",
+            "samples": [
+              "{nextActionNoT}"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "PlotIntent",
+        "samples": [
+          "get plot",
+          "see plot"
+        ],
+        "slots": []
+      },
+      {
+        "name": "SensorIntent",
+        "samples": [
+          "Log {sensor}",
+          "Log {sensor} sensor",
+          "{sensor} sensor",
+          "{sampleRate} sample rate",
+          "sample rate of {sampleRate}",
+          "log {sensor} every {sampleRate}",
+          "log {sensor} sensor ever {sampleRate}",
+          "make {threshold}",
+          "new sensor",
+          "start on {startDate} at {startTime}",
+          "end on {endDate} at {endTime}",
+          "{minMax} threshold"
+        ],
+        "slots": [
+          {
+            "name": "sensor",
+            "type": "sensorSlot",
+            "samples": [
+              "Use {sensor}",
+              "Log {sensor}",
+              "record {sensor}"
+            ]
+          },
+          {
+            "name": "sampleRate",
+            "type": "AMAZON.DURATION",
+            "samples": [
+              "{sampleRate}",
+              "sample every {sampleRate}",
+              "sample {sampleRate}"
+            ]
+          },
+          {
+            "name": "startDate",
+            "type": "AMAZON.DATE",
+            "samples": [
+              "{startDate}",
+              "start {startDate}",
+              "log {startDate}",
+              "start log on {startDate}",
+              "on {startDate}",
+              "{startDate} at {startTime}"
+            ]
+          },
+          {
+            "name": "startTime",
+            "type": "AMAZON.TIME",
+            "samples": [
+              "{startTime}"
+            ]
+          },
+          {
+            "name": "endDate",
+            "type": "AMAZON.DATE",
+            "samples": [
+              "{endDate}",
+              "{endDate} at {endTime}"
+            ]
+          },
+          {
+            "name": "threshold",
+            "type": "AMAZON.NUMBER",
+            "samples": [
+              "{threshold}",
+              "set {threshold}"
+            ]
+          },
+          {
+            "name": "endTime",
+            "type": "AMAZON.TIME",
+            "samples": [
+              "{endTime}"
+            ]
+          },
+          {
+            "name": "minMax",
+            "type": null,
+            "samples": [
+              "{minMax}"
+            ]
+          },
+          {
+            "name": "actuatorYN",
+            "type": "YNSlot",
+            "samples": [
+              "{actuatorYN}"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ThresholdIntent",
+        "samples": [
+          "set {threshold}",
+          "{nextAction} please",
+          "{threshold} threshold"
+        ],
+        "slots": [
+          {
+            "name": "threshold",
+            "type": "AMAZON.NUMBER"
+          },
+          {
+            "name": "nextAction",
+            "type": "nextActionSlot",
+            "samples": [
+              "trigger an {nextAction}",
+              "{nextAction}",
+              "trigger {nextAction}",
+              "new {nextAction}",
+              "log {nextAction}",
+              "log new {nextAction}",
+              "log a new {nextAction}"
+            ]
+          }
+        ]
+      }
+    ],
+    "invocationName": "scijoy logger"
+  },
+  "prompts": [
+    {
+      "id": "Elicit.Intent-ActuatorIntent.IntentSlot-actuator",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "what actuator would you like?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ActuatorIntent.IntentSlot-trigger",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "what trigger value do you want?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ActuatorIntent.IntentSlot-power",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "what power level do you want?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ActuatorIntent.IntentSlot-duration",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "how long should the {actuator} be on?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ActuatorIntent.IntentSlot-newSensorYN",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Would you like to log another sensor?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-noThresholdActuatorIntent.IntentSlot-nextActionNoT",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Would you like to trigger an actuator, use a new sensor, or quit?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SensorIntent.IntentSlot-sensor",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What sensor would you like to log?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SensorIntent.IntentSlot-sampleRate",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "what sample rate would you like for the {sensor} sensor?"
+        },
+        {
+          "type": "PlainText",
+          "value": "How often would you like to sample the {sensor} sensor?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SensorIntent.IntentSlot-startDate",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What day would you like the log to start?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SensorIntent.IntentSlot-startTime",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What time would you like to start the log?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SensorIntent.IntentSlot-endDate",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What day would you like the {sensor} sensor log to end on?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SensorIntent.IntentSlot-threshold",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Please specify a threshold value"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SensorIntent.IntentSlot-endTime",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What time would you like the stop logging the {sensor} sensor?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SensorIntent.IntentSlot-minMax",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Is this a minimum or a maximum threshold?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SensorIntent.IntentSlot-actuatorYN",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Do you want to trigger an actuator?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ThresholdIntent.IntentSlot-threshold",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What threshold would you like to set?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ThresholdIntent.IntentSlot-nextAction",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Would you like to trigger an actuator, log a new sensor, or quit?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "intents": [
+      {
+        "name": "ActuatorIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "actuator",
+            "type": "actuatorSlot",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ActuatorIntent.IntentSlot-actuator"
+            }
+          },
+          {
+            "name": "trigger",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ActuatorIntent.IntentSlot-trigger"
+            }
+          },
+          {
+            "name": "power",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ActuatorIntent.IntentSlot-power"
+            }
+          },
+          {
+            "name": "duration",
+            "type": "AMAZON.DURATION",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ActuatorIntent.IntentSlot-duration"
+            }
+          },
+          {
+            "name": "newSensorYN",
+            "type": "YNSlot",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ActuatorIntent.IntentSlot-newSensorYN"
+            }
+          }
+        ]
+      },
+      {
+        "name": "noThresholdActuatorIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "nextActionNoT",
+            "type": "nextActionSlot",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-noThresholdActuatorIntent.IntentSlot-nextActionNoT"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SensorIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "sensor",
+            "type": "sensorSlot",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SensorIntent.IntentSlot-sensor"
+            }
+          },
+          {
+            "name": "sampleRate",
+            "type": "AMAZON.DURATION",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SensorIntent.IntentSlot-sampleRate"
+            }
+          },
+          {
+            "name": "startDate",
+            "type": "AMAZON.DATE",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SensorIntent.IntentSlot-startDate"
+            }
+          },
+          {
+            "name": "startTime",
+            "type": "AMAZON.TIME",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SensorIntent.IntentSlot-startTime"
+            }
+          },
+          {
+            "name": "endDate",
+            "type": "AMAZON.DATE",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SensorIntent.IntentSlot-endDate"
+            }
+          },
+          {
+            "name": "threshold",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SensorIntent.IntentSlot-threshold"
+            }
+          },
+          {
+            "name": "endTime",
+            "type": "AMAZON.TIME",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SensorIntent.IntentSlot-endTime"
+            }
+          },
+          {
+            "name": "minMax",
+            "type": null,
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SensorIntent.IntentSlot-minMax"
+            }
+          },
+          {
+            "name": "actuatorYN",
+            "type": "YNSlot",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SensorIntent.IntentSlot-actuatorYN"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ThresholdIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "threshold",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ThresholdIntent.IntentSlot-threshold"
+            }
+          },
+          {
+            "name": "nextAction",
+            "type": "nextActionSlot",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ThresholdIntent.IntentSlot-nextAction"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
